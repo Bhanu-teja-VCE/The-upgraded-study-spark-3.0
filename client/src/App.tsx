@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/queryClient";
+import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/not-found";
 import Landing from "@/pages/Landing";
@@ -21,29 +22,31 @@ import Settings from "@/components/dashboard/Settings";
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <Router>
-        <Routes>
-          {/* Public Routes */}
-          <Route path="/" element={<Landing />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <Router>
+          <Routes>
+            {/* Public Routes */}
+            <Route path="/" element={<Landing />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
 
-          {/* Dashboard Routes - No auth required for preview */}
-          <Route path="/dashboard" element={<DashboardLayout />}>
-            <Route index element={<DashboardOverview />} />
-            <Route path="notes" element={<Notes />} />
-            <Route path="chat" element={<Chat />} />
-            <Route path="flashcards" element={<Flashcards />} />
-            <Route path="quiz" element={<Quiz />} />
-            <Route path="planner" element={<Planner />} />
-            <Route path="focus" element={<FocusMode />} />
-            <Route path="settings" element={<Settings />} />
-          </Route>
+            {/* Dashboard Routes of Preview */}
+            <Route path="/dashboard" element={<DashboardLayout />}>
+              <Route index element={<DashboardOverview />} />
+              <Route path="notes" element={<Notes />} />
+              <Route path="chat" element={<Chat />} />
+              <Route path="flashcards" element={<Flashcards />} />
+              <Route path="quiz" element={<Quiz />} />
+              <Route path="planner" element={<Planner />} />
+              <Route path="focus" element={<FocusMode />} />
+              <Route path="settings" element={<Settings />} />
+            </Route>
 
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Toaster />
-      </Router>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <Toaster />
+        </Router>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }

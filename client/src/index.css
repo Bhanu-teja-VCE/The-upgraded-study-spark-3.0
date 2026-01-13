@@ -6,19 +6,57 @@
 
 @layer base {
   :root {
+    /* ☀️ PREMIUM LIGHT MODE (Solar Theme) */
+    --background: 210 40% 98%;
+    /* #F8FAFC (Pearl) */
+    --foreground: 222 47% 11%;
+    /* #020617 (Jet Black) */
+
+    --card: 0 0% 100%;
+    /* White Glass */
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 220 100% 50%;
+    /* #0055FF (Electric Cobalt) */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222 47% 11%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 220 100% 50%;
+
+    --radius: 1rem;
+  }
+
+  /* 🌙 CYBER DARK MODE (Existing) */
+  .dark {
     --background: 240 20% 5%;
     /* #0A0A0F */
     --foreground: 0 0% 100%;
 
+    --card: 240 20% 5%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 240 20% 5%;
+    --popover-foreground: 0 0% 100%;
+
     --primary: 189 100% 50%;
-    /* #00D9FF */
+    /* #00D9FF (Cyan) */
     --primary-foreground: 0 0% 0%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 240 20% 5%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 20% 5%;
 
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
@@ -35,8 +73,6 @@
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --ring: 189 100% 50%;
-
-    --radius: 1rem;
   }
 
   body {
@@ -56,6 +92,15 @@
 
 @layer utilities {
   .glass-card {
+    background: rgba(255, 255, 255, 0.6);
+    /* Frosted Glass Light */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .glass-card {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);

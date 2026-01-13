@@ -16,6 +16,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { ModeToggle } from "@/components/mode-toggle";
 
 interface SidebarProps {
     collapsed: boolean;
@@ -128,14 +129,18 @@ export function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
                             <p className="text-sm font-bold text-white truncate">{user.name}</p>
                             <p className="text-xs text-[#00D9FF] truncate">Pro Plan</p>
                         </div>
+                        <ModeToggle />
                         <Button variant="ghost" size="icon" onClick={handleLogout} className="text-gray-400 hover:text-red-400">
                             <LogOut className="w-4 h-4" />
                         </Button>
                     </div>
                 ) : (
-                    <Button variant="ghost" size="icon" onClick={handleLogout} className="w-full text-gray-400 hover:text-red-400 justify-center">
-                        <LogOut className="w-5 h-5" />
-                    </Button>
+                    <div className="flex flex-col gap-2 items-center">
+                        <ModeToggle />
+                        <Button variant="ghost" size="icon" onClick={handleLogout} className="w-full text-gray-400 hover:text-red-400 justify-center">
+                            <LogOut className="w-5 h-5" />
+                        </Button>
+                    </div>
                 )}
             </div>
         </motion.aside>

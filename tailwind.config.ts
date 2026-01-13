@@ -15,40 +15,40 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
-        background: "#0A0A0F", // Dark Navy
-        foreground: "#FFFFFF",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
         card: {
-          DEFAULT: "rgba(255, 255, 255, 0.05)",
-          foreground: "#FFFFFF",
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--foreground))", // Usually matches main foreground or specific var
         },
         popover: {
-          DEFAULT: "#0F0F14",
-          foreground: "#FFFFFF",
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
         },
         primary: {
-          DEFAULT: "#00D9FF", // Cyan/Electric Blue
-          foreground: "#000000",
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "#8B5CF6", // Purple accent
-          foreground: "#FFFFFF",
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
         },
         muted: {
-          DEFAULT: "rgba(255, 255, 255, 0.1)",
-          foreground: "#A1A1AA",
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: "#00D9FF",
-          foreground: "#000000",
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
         },
         destructive: {
-          DEFAULT: "#FF453A",
-          foreground: "#FFFFFF",
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
         },
-        warning: "#FFB800", // Gold
-        border: "rgba(0, 217, 255, 0.2)",
-        input: "rgba(0, 0, 0, 0.3)",
-        ring: "#00D9FF",
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        warning: "#FFB800",
       },
       keyframes: {
         "accordion-down": {

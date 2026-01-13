@@ -1,7 +1,10 @@
 import { useEffect, useRef } from "react";
 
+import { useTheme } from "next-themes";
+
 export function NeuralSphere() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
+    const { resolvedTheme } = useTheme();
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -12,9 +15,17 @@ export function NeuralSphere() {
         let width = canvas.width = canvas.offsetWidth;
         let height = canvas.height = canvas.offsetHeight;
 
+        // Theme Colors
+        const isDark = resolvedTheme === 'dark';
+        const PRIMARY_COLOR = isDark ? "0, 217, 255" : "0, 85, 255"; // Cyan vs Cobalt
+        const SECONDARY_COLOR = isDark ? "139, 92, 246" : "100, 116, 139"; // Purple vs Slate
+        const LINE_COLOR = isDark ? "rgba(0, 217, 255, 0.15)" : "rgba(0, 85, 255, 0.1)";
+
+        // ... (rest of logic handles dots)
+
         // Sphere Config
         const GLOBE_RADIUS = width < 500 ? 100 : 180;
-        const DOT_RADIUS = 2;
+        const DOT_RADIUS = isDark ? 2 : 1.5; // Slightly smaller dots in light mode for elegance
         const GLOBE_CENTER_Z = -GLOBE_RADIUS;
         const PROJECTION_CENTER_X = width / 2;
         const PROJECTION_CENTER_Y = height / 2;
@@ -80,8 +91,8 @@ export function NeuralSphere() {
 
                 ctx!.beginPath();
                 // Dynamic color based on position
-                const isCyan = Math.random() > 0.8;
-                ctx!.fillStyle = `rgba(${isCyan ? '0, 217, 255' : '139, 92, 246'}, ${alpha})`;
+                const isPrimary = Math.random() > 0.8;
+                ctx!.fillStyle = `rgba(${isPrimary ? PRIMARY_COLOR : SECONDARY_COLOR}, ${alpha})`;
                 ctx!.arc(this.xProjected, this.yProjected, DOT_RADIUS * this.scaleProjected, 0, Math.PI * 2);
                 ctx!.fill();
             }
@@ -102,6 +113,7 @@ export function NeuralSphere() {
         };
 
         const animate = () => {
+            // Clear with transparent or theme background? Transparent allows parent bg to show.
             ctx.clearRect(0, 0, width, height);
 
             // Update Physics
@@ -121,8 +133,8 @@ export function NeuralSphere() {
                 dot.draw();
             });
 
-            // Connections (Neural Lines - simplified for performance)
-            ctx.strokeStyle = "rgba(0, 217, 255, 0.15)";
+            // Connections (Neural Lines)
+            ctx.strokeStyle = LINE_COLOR;
             ctx.lineWidth = 0.5;
             for (let i = 0; i < dots.length; i += 8) { // Skip some to reduce load
                 const d = dots[i];
@@ -161,7 +173,8 @@ export function NeuralSphere() {
             window.removeEventListener("resize", handleResize);
             window.removeEventListener("mousemove", handleMouseMove);
         };
-    }, []);
+    }, [resolvedTheme]); // Re-run when theme changes
+
 
     return <canvas ref={canvasRef} className="w-full h-full" />;
 }

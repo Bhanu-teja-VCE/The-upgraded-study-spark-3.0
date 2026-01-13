@@ -1,69 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  /* Dark Theme Base */
-  --background: 224 71% 4%;
-  --foreground: 210 40% 98%;
-
-  /* Electric Blue */
-  --primary: 199 89% 48%;
-  --primary-foreground: 210 40% 98%;
-
-  /* Cyber Purple */
-  --secondary: 262 83% 58%;
-  --secondary-foreground: 210 40% 98%;
-
-  /* Surface Colors */
-  --card: 224 71% 6%;
-  --card-foreground: 210 40% 98%;
-  --popover: 224 71% 6%;
-  --popover-foreground: 210 40% 98%;
-
-  /* UI Elements */
-  --muted: 217 33% 17%;
-  --muted-foreground: 215 20% 65%;
-  --accent: 217 33% 17%;
-  --accent-foreground: 210 40% 98%;
-  --destructive: 0 62% 30%;
-  --destructive-foreground: 210 40% 98%;
-  
-  --border: 217 33% 17%;
-  --input: 217 33% 17%;
-  --ring: 199 89% 48%;
-
-  --radius: 0.75rem;
-
-  --font-display: 'Outfit', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
-}
-
 @layer base {
-  body {
-    @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary-foreground;
-    font-family: var(--font-body);
+  :root {
+    --background: 240 20% 5%;
+    /* #0A0A0F */
+    --foreground: 0 0% 100%;
+
+    --primary: 189 100% 50%;
+    /* #00D9FF */
+    --primary-foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 20% 5%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 20% 5%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 189 100% 50%;
+
+    --radius: 1rem;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-display);
-    @apply font-bold tracking-tight;
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-[#00D9FF]/30 selection:text-white font-sans;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Poppins', sans-serif;
   }
 }
 
 @layer utilities {
-  .text-glow {
-    text-shadow: 0 0 20px rgba(14, 165, 233, 0.5);
-  }
-  
-  .glass-panel {
-    @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-2xl;
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 217, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
   }
 
-  .neon-border {
-    box-shadow: 0 0 10px rgba(14, 165, 233, 0.2), inset 0 0 10px rgba(14, 165, 233, 0.1);
+  .glass-card:hover {
+    border-color: rgba(0, 217, 255, 0.5);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.2);
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.7);
+  }
+
+  .box-glow {
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
   }
 }
 
@@ -71,13 +81,16 @@
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
-  background: hsl(var(--background));
+  background: #0A0A0F;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: hsl(var(--muted));
+  background: #00D9FF;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--muted-foreground));
+  background: #00B2D1;
 }

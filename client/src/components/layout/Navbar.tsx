@@ -1,6 +1,6 @@
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState } from "react";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { CyberButton } from "../ui/CyberButton";
 import { Sparkles } from "lucide-react";
 
@@ -28,7 +28,7 @@ export function Navbar() {
       className="fixed top-0 left-0 right-0 z-50 py-4 px-4"
     >
       <nav className="container mx-auto flex items-center justify-between p-4 rounded-2xl glass-panel max-w-5xl">
-        <Link href="/" className="flex items-center gap-2 text-xl font-bold font-display cursor-pointer group">
+        <Link to="/" className="flex items-center gap-2 text-xl font-bold font-display cursor-pointer group">
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center group-hover:rotate-12 transition-transform">
             <Sparkles className="w-5 h-5 text-white" />
           </div>
@@ -41,8 +41,8 @@ export function Navbar() {
           <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
         </div>
 
-        <CyberButton 
-          variant="secondary" 
+        <CyberButton
+          variant="secondary"
           className="py-2 px-6 text-sm"
           onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}
         >

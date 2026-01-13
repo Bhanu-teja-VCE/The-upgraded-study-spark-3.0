@@ -59,6 +59,21 @@ async function buildAll() {
     external: externals,
     logLevel: "info",
   });
+
+  console.log("building functions...");
+  await esbuild({
+    entryPoints: ["server/functions.ts"],
+    platform: "node",
+    bundle: true,
+    format: "cjs",
+    outfile: "dist/functions.js",
+    define: {
+      "process.env.NODE_ENV": '"production"',
+    },
+    minify: false, // functions logging is better with non-minified code
+    external: externals,
+    logLevel: "info",
+  });
 }
 
 buildAll().catch((err) => {

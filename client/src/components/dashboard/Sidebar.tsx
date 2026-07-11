@@ -51,12 +51,12 @@ export function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
         <motion.aside
             initial={false}
             animate={{ width: collapsed ? 80 : 280 }}
-            className="fixed left-0 top-0 h-screen z-50 flex flex-col transition-all duration-300 bg-[#0A0A0F]/90 backdrop-blur-xl border-r border-[#00D9FF]/10 shadow-[4px_0_24px_rgba(0,0,0,0.4)]"
+            className="fixed left-0 top-0 h-screen z-50 flex flex-col transition-all duration-300 bg-card/80 backdrop-blur-xl border-r border-border shadow-lg dark:bg-[#0A0A0F]/90 dark:border-primary/10 dark:shadow-[4px_0_24px_rgba(0,0,0,0.4)]"
         >
             {/* Header */}
             <div className="h-24 flex items-center justify-center relative">
                 <Link to="/" className="flex items-center gap-3 overflow-hidden px-4">
-                    <div className="w-10 h-10 bg-gradient-to-br from-[#00D9FF] to-[#8B5CF6] rounded-xl flex items-center justify-center flex-shrink-0 shadow-[0_0_15px_rgba(0,217,255,0.5)]">
+                    <div className="w-10 h-10 bg-gradient-to-br from-primary to-[#8B5CF6] rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg dark:shadow-[0_0_15px_rgba(0,217,255,0.5)]">
                         <Sparkles className="w-6 h-6 text-white fill-white" />
                     </div>
                     {!collapsed && (
@@ -64,9 +64,9 @@ export function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
-                            className="font-poppins font-bold text-2xl text-white whitespace-nowrap tracking-wide"
+                            className="font-poppins font-bold text-2xl text-foreground whitespace-nowrap tracking-wide"
                         >
-                            Study<span className="text-[#00D9FF]">Spark</span>
+                            Study<span className="text-primary">Spark</span>
                         </motion.span>
                     )}
                 </Link>
@@ -74,7 +74,7 @@ export function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
                 <Button
                     variant="ghost"
                     size="icon"
-                    className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-[#0A0A0F] border border-[#00D9FF]/30 hover:bg-[#00D9FF] hover:text-black text-[#00D9FF] transition-all shadow-lg z-50"
+                    className="absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-card border border-border hover:bg-primary hover:text-primary-foreground text-primary transition-all shadow-lg z-50 dark:bg-[#0A0A0F] dark:border-primary/30"
                     onClick={() => setCollapsed(!collapsed)}
                 >
                     {collapsed ? <ChevronRight className="w-3 h-3" /> : <ChevronLeft className="w-3 h-3" />}
@@ -91,15 +91,15 @@ export function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
                                 className={cn(
                                     "flex items-center gap-4 px-4 py-3.5 rounded-2xl transition-all duration-200 group relative overflow-hidden",
                                     isActive
-                                        ? "bg-[#00D9FF]/10 text-white shadow-[0_0_20px_rgba(0,217,255,0.1)]"
-                                        : "text-gray-400 hover:text-white hover:bg-white/5",
+                                        ? "bg-primary/10 text-foreground shadow-sm dark:shadow-[0_0_20px_rgba(0,217,255,0.1)]"
+                                        : "text-muted-foreground hover:text-foreground hover:bg-muted/50",
                                     collapsed && "justify-center px-0"
                                 )}
                             >
                                 {isActive && (
-                                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-[#00D9FF] rounded-r-full shadow-[0_0_10px_#00D9FF]" />
+                                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-primary rounded-r-full dark:shadow-[0_0_10px_hsl(var(--primary))]" />
                                 )}
-                                <item.icon className={cn("w-5 h-5 flex-shrink-0 transition-colors", isActive ? "text-[#00D9FF]" : "group-hover:text-[#00D9FF]")} />
+                                <item.icon className={cn("w-5 h-5 flex-shrink-0 transition-colors", isActive ? "text-primary" : "group-hover:text-primary")} />
 
                                 {!collapsed && (
                                     <motion.span
@@ -118,26 +118,26 @@ export function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
             </nav>
 
             {/* Footer / Profile */}
-            <div className="p-4 border-t border-[#00D9FF]/10 bg-black/20">
+            <div className="p-4 border-t border-border bg-muted/30 dark:bg-black/20 dark:border-primary/10">
                 {!collapsed ? (
-                    <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
-                        <Avatar className="h-10 w-10 border-2 border-[#00D9FF]">
+                    <div className="flex items-center gap-3 p-3 rounded-xl bg-muted/50 border border-border dark:bg-white/5 dark:border-white/5">
+                        <Avatar className="h-10 w-10 border-2 border-primary">
                             <AvatarImage src="" />
-                            <AvatarFallback className="bg-[#00D9FF]/20 text-[#00D9FF] font-bold">{user.initials}</AvatarFallback>
+                            <AvatarFallback className="bg-primary/20 text-primary font-bold">{user.initials}</AvatarFallback>
                         </Avatar>
                         <div className="flex-1 overflow-hidden">
-                            <p className="text-sm font-bold text-white truncate">{user.name}</p>
-                            <p className="text-xs text-[#00D9FF] truncate">Pro Plan</p>
+                            <p className="text-sm font-bold text-foreground truncate">{user.name}</p>
+                            <p className="text-xs text-primary truncate">Pro Plan</p>
                         </div>
                         <ModeToggle />
-                        <Button variant="ghost" size="icon" onClick={handleLogout} className="text-gray-400 hover:text-red-400">
+                        <Button variant="ghost" size="icon" onClick={handleLogout} className="text-muted-foreground hover:text-destructive">
                             <LogOut className="w-4 h-4" />
                         </Button>
                     </div>
                 ) : (
                     <div className="flex flex-col gap-2 items-center">
                         <ModeToggle />
-                        <Button variant="ghost" size="icon" onClick={handleLogout} className="w-full text-gray-400 hover:text-red-400 justify-center">
+                        <Button variant="ghost" size="icon" onClick={handleLogout} className="w-full text-muted-foreground hover:text-destructive justify-center">
                             <LogOut className="w-5 h-5" />
                         </Button>
                     </div>

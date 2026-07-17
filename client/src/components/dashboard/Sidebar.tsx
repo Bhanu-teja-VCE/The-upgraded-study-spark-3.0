@@ -56,7 +56,7 @@ export function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
             {/* Header */}
             <div className="h-24 flex items-center justify-center relative">
                 <Link to="/" className="flex items-center gap-3 overflow-hidden px-4">
-                    <div className="w-10 h-10 bg-gradient-to-br from-primary to-[#8B5CF6] rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg dark:shadow-[0_0_15px_rgba(0,217,255,0.5)]">
+                    <div className="w-10 h-10 bg-gradient-to-br from-primary to-[#8B5CF6] rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg dark:shadow-[0_0_15px_rgba(99, 102, 241,0.5)]">
                         <Sparkles className="w-6 h-6 text-white fill-white" />
                     </div>
                     {!collapsed && (
@@ -91,7 +91,7 @@ export function Sidebar({ collapsed, setCollapsed }: SidebarProps) {
                                 className={cn(
                                     "flex items-center gap-4 px-4 py-3.5 rounded-2xl transition-all duration-200 group relative overflow-hidden",
                                     isActive
-                                        ? "bg-primary/10 text-foreground shadow-sm dark:shadow-[0_0_20px_rgba(0,217,255,0.1)]"
+                                        ? "bg-primary/10 text-foreground shadow-sm dark:shadow-[0_0_20px_rgba(99, 102, 241,0.1)]"
                                         : "text-muted-foreground hover:text-foreground hover:bg-muted/50",
                                     collapsed && "justify-center px-0"
                                 )}

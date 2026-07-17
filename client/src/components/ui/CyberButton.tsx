@@ -15,8 +15,8 @@ export const CyberButton = React.forwardRef<HTMLButtonElement, CyberButtonProps>
         className={cn(
           "relative overflow-hidden font-bold transition-all duration-300",
           variant === "primary"
-            ? "bg-[#00D9FF] text-black hover:bg-[#00D9FF] hover:shadow-[0_0_30px_rgba(0,217,255,0.4)]"
-            : "bg-transparent border border-[#00D9FF]/30 text-[#00D9FF] hover:bg-[#00D9FF]/10",
+            ? "bg-[#6366F1] text-black hover:bg-[#6366F1] hover:shadow-[0_0_30px_rgba(99, 102, 241,0.4)]"
+            : "bg-transparent border border-[#6366F1]/30 text-[#6366F1] hover:bg-[#6366F1]/10",
           className
         )}
         {...props}

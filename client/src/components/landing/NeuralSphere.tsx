@@ -17,9 +17,9 @@ export function NeuralSphere() {
 
         // Theme Colors
         const isDark = resolvedTheme === 'dark';
-        const PRIMARY_COLOR = isDark ? "0, 217, 255" : "0, 85, 255"; // Cyan vs Cobalt
+        const PRIMARY_COLOR = isDark ? "99, 102, 241" : "0, 85, 255"; // Cyan vs Cobalt
         const SECONDARY_COLOR = isDark ? "139, 92, 246" : "100, 116, 139"; // Purple vs Slate
-        const LINE_COLOR = isDark ? "rgba(0, 217, 255, 0.15)" : "rgba(0, 85, 255, 0.1)";
+        const LINE_COLOR = isDark ? "rgba(99, 102, 241, 0.15)" : "rgba(0, 85, 255, 0.1)";
 
         // ... (rest of logic handles dots)
 

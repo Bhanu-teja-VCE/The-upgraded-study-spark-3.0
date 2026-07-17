@@ -21,8 +21,8 @@ export function Hero() {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="max-w-4xl mx-auto"
                 >
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#00D9FF]/10 border border-[#00D9FF]/20 text-[#00D9FF] text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-md">
-                        <span className="w-2 h-2 rounded-full bg-[#00D9FF] animate-pulse" />
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#6366F1]/10 border border-[#6366F1]/20 text-[#6366F1] text-xs font-bold uppercase tracking-widest mb-6 backdrop-blur-md">
+                        <span className="w-2 h-2 rounded-full bg-[#6366F1] animate-pulse" />
                         System Online v4.0
                     </div>
 
@@ -31,7 +31,7 @@ export function Hero() {
                             The Ultimate
                         </span>
                         <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00D9FF] to-[#8B5CF6] animate-gradient-x">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] animate-gradient-x">
                             Study Spark
                         </span>
                     </h1>

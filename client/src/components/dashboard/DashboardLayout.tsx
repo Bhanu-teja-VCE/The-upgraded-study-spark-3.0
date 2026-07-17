@@ -23,7 +23,7 @@ export function DashboardLayout() {
     return (
         <div className="min-h-screen bg-background text-foreground selection:bg-primary/30 font-inter overflow-hidden">
             {/* Gradient background - adapts to theme */}
-            <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-background to-background pointer-events-none dark:from-[#00D9FF]/5" />
+            <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-background to-background pointer-events-none dark:from-[#6366F1]/5" />
 
             <Sidebar collapsed={collapsed} setCollapsed={setCollapsed} />
 

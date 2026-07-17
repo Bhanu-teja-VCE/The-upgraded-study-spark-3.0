@@ -7,7 +7,7 @@ type ThemeProviderProps = {
     children: React.ReactNode
     defaultTheme?: Theme
     storageKey?: string
-    attribute?: string
+    attribute?: any
     enableSystem?: boolean
     disableTransitionOnChange?: boolean
 }

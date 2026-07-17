@@ -79,8 +79,8 @@ export function Quiz() {
     if (questions.length === 0) {
         return (
             <div className="flex flex-col items-center justify-center h-[calc(100vh-8rem)] text-center p-6 bg-[#0A0A0F]">
-                <div className="w-24 h-24 bg-[#00D9FF]/10 rounded-3xl flex items-center justify-center mb-6 animate-pulse shadow-[0_0_30px_rgba(0,217,255,0.2)]">
-                    <Brain className="w-12 h-12 text-[#00D9FF]" />
+                <div className="w-24 h-24 bg-[#6366F1]/10 rounded-3xl flex items-center justify-center mb-6 animate-pulse shadow-[0_0_30px_rgba(99, 102, 241,0.2)]">
+                    <Brain className="w-12 h-12 text-[#6366F1]" />
                 </div>
                 <h2 className="text-4xl font-bold mb-4 text-white">AI Quiz Engine</h2>
                 <p className="text-slate-400 max-w-md mb-10 text-lg">
@@ -89,22 +89,22 @@ export function Quiz() {
 
                 <div className="w-full max-w-md space-y-6">
                     <div className="space-y-2 text-left">
-                        <Label className="text-[#00D9FF]">Topic</Label>
+                        <Label className="text-[#6366F1]">Topic</Label>
                         <Input
                             placeholder="e.g., Quantum Physics, French Revolution..."
                             value={topic}
                             onChange={(e) => setTopic(e.target.value)}
-                            className="bg-white/5 border-[#00D9FF]/20 text-white placeholder:text-slate-600 focus:border-[#00D9FF] focus:ring-[#00D9FF]/20 h-12 rounded-xl"
+                            className="bg-white/5 border-[#6366F1]/20 text-white placeholder:text-slate-600 focus:border-[#6366F1] focus:ring-[#6366F1]/20 h-12 rounded-xl"
                         />
                     </div>
 
                     <div className="space-y-2 text-left">
-                        <Label className="text-[#00D9FF]">Difficulty</Label>
+                        <Label className="text-[#6366F1]">Difficulty</Label>
                         <Select value={difficulty} onValueChange={setDifficulty}>
-                            <SelectTrigger className="bg-white/5 border-[#00D9FF]/20 text-white h-12 rounded-xl focus:ring-[#00D9FF]/20">
+                            <SelectTrigger className="bg-white/5 border-[#6366F1]/20 text-white h-12 rounded-xl focus:ring-[#6366F1]/20">
                                 <SelectValue />
                             </SelectTrigger>
-                            <SelectContent className="bg-[#0A0A0F] border-[#00D9FF]/30 text-white">
+                            <SelectContent className="bg-[#0A0A0F] border-[#6366F1]/30 text-white">
                                 <SelectItem value="easy">Easy</SelectItem>
                                 <SelectItem value="medium">Medium</SelectItem>
                                 <SelectItem value="hard">Hard (Exam Mode)</SelectItem>
@@ -114,7 +114,7 @@ export function Quiz() {
 
                     <Button
                         size="lg"
-                        className="w-full bg-[#00D9FF] hover:bg-[#00D9FF]/80 text-black font-bold h-12 rounded-xl shadow-[0_0_20px_rgba(0,217,255,0.3)] transition-all hover:scale-[1.02]"
+                        className="w-full bg-[#6366F1] hover:bg-[#6366F1]/80 text-black font-bold h-12 rounded-xl shadow-[0_0_20px_rgba(99, 102, 241,0.3)] transition-all hover:scale-[1.02]"
                         onClick={handleGenerate}
                         disabled={isGenerating || !topic}
                     >
@@ -145,7 +145,7 @@ export function Quiz() {
                 <p className="text-xl text-slate-400 mb-12">You scored <span className="text-white font-bold">{score}</span> out of <span className="text-white font-bold">{questions.length}</span> questions correct.</p>
 
                 <div className="flex gap-4">
-                    <Button onClick={() => setQuestions([])} variant="outline" className="h-12 border-[#00D9FF]/30 text-[#00D9FF] hover:bg-[#00D9FF]/10 hover:text-[#00D9FF] rounded-xl px-8">
+                    <Button onClick={() => setQuestions([])} variant="outline" className="h-12 border-[#6366F1]/30 text-[#6366F1] hover:bg-[#6366F1]/10 hover:text-[#6366F1] rounded-xl px-8">
                         New Topic
                     </Button>
                     <Button
@@ -156,7 +156,7 @@ export function Quiz() {
                             setIsAnswered(false);
                             setSelectedOption(null);
                         }}
-                        className="h-12 bg-[#00D9FF] text-black hover:bg-[#00D9FF]/80 font-bold rounded-xl px-8 shadow-[0_0_20px_rgba(0,217,255,0.3)]"
+                        className="h-12 bg-[#6366F1] text-black hover:bg-[#6366F1]/80 font-bold rounded-xl px-8 shadow-[0_0_20px_rgba(99, 102, 241,0.3)]"
                     >
                         Retry Quiz
                     </Button>
@@ -172,12 +172,12 @@ export function Quiz() {
             <div className="flex items-center justify-between mb-8">
                 <div>
                     <h2 className="text-2xl font-bold text-white mb-2 uppercase tracking-wider">{topic}</h2>
-                    <div className="flex items-center gap-2 text-sm text-[#00D9FF]">
-                        <span className="bg-[#00D9FF]/10 px-3 py-1 rounded-full border border-[#00D9FF]/20">Question {currentQIndex + 1} / {questions.length}</span>
+                    <div className="flex items-center gap-2 text-sm text-[#6366F1]">
+                        <span className="bg-[#6366F1]/10 px-3 py-1 rounded-full border border-[#6366F1]/20">Question {currentQIndex + 1} / {questions.length}</span>
                     </div>
                 </div>
                 <div className="text-right bg-white/5 px-6 py-3 rounded-2xl border border-white/10 backdrop-blur-md">
-                    <span className="text-3xl font-mono font-bold text-[#00D9FF]">{score}</span>
+                    <span className="text-3xl font-mono font-bold text-[#6366F1]">{score}</span>
                     <span className="text-xs text-slate-400 uppercase tracking-widest ml-2">Points</span>
                 </div>
             </div>
@@ -186,12 +186,12 @@ export function Quiz() {
                 <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: `${((currentQIndex) / questions.length) * 100}%` }}
-                    className="absolute top-0 left-0 h-full bg-[#00D9FF] shadow-[0_0_10px_#00D9FF]"
+                    className="absolute top-0 left-0 h-full bg-[#6366F1] shadow-[0_0_10px_#6366F1]"
                 />
             </div>
 
             <Card className="bg-white/5 backdrop-blur-xl p-10 mb-8 border border-white/10 rounded-3xl shadow-2xl relative overflow-hidden group">
-                <div className="absolute top-0 left-0 w-1 h-full bg-[#00D9FF]" />
+                <div className="absolute top-0 left-0 w-1 h-full bg-[#6366F1]" />
                 <h3 className="text-3xl font-bold mb-10 leading-relaxed text-white">{currentQ.q}</h3>
 
                 <div className="grid grid-cols-1 gap-4">
@@ -211,13 +211,13 @@ export function Quiz() {
                                 className={cn(
                                     "w-full text-left p-6 rounded-2xl border transition-all duration-200 flex items-center justify-between text-lg group/btn",
                                     stateStyles,
-                                    !isAnswered && "hover:border-[#00D9FF]/50 hover:shadow-[0_0_15px_rgba(0,217,255,0.1)]"
+                                    !isAnswered && "hover:border-[#6366F1]/50 hover:shadow-[0_0_15px_rgba(99, 102, 241,0.1)]"
                                 )}
                             >
                                 <div className="flex items-center gap-4">
                                     <span className={cn(
                                         "w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold transition-colors",
-                                        isAnswered && idx === currentQ.correct ? "bg-green-500/20" : "bg-white/10 group-hover/btn:bg-[#00D9FF]/20"
+                                        isAnswered && idx === currentQ.correct ? "bg-green-500/20" : "bg-white/10 group-hover/btn:bg-[#6366F1]/20"
                                     )}>
                                         {String.fromCharCode(65 + idx)}
                                     </span>
@@ -237,14 +237,14 @@ export function Quiz() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="bg-[#00D9FF]/5 border border-[#00D9FF]/20 p-6 rounded-2xl mb-8 backdrop-blur-md"
+                        className="bg-[#6366F1]/5 border border-[#6366F1]/20 p-6 rounded-2xl mb-8 backdrop-blur-md"
                     >
                         <div className="flex items-start gap-4">
-                            <div className="w-10 h-10 rounded-xl bg-[#00D9FF]/20 flex items-center justify-center shrink-0">
-                                <AlertCircle className="w-5 h-5 text-[#00D9FF]" />
+                            <div className="w-10 h-10 rounded-xl bg-[#6366F1]/20 flex items-center justify-center shrink-0">
+                                <AlertCircle className="w-5 h-5 text-[#6366F1]" />
                             </div>
                             <div>
-                                <h4 className="font-bold text-[#00D9FF] mb-2 text-lg">Detailed Explanation</h4>
+                                <h4 className="font-bold text-[#6366F1] mb-2 text-lg">Detailed Explanation</h4>
                                 <p className="text-slate-300 leading-relaxed text-lg">{currentQ.explanation}</p>
                             </div>
                         </div>
@@ -257,7 +257,7 @@ export function Quiz() {
                     size="lg"
                     onClick={handleNext}
                     disabled={!isAnswered}
-                    className="h-14 px-10 bg-[#00D9FF] hover:bg-[#00D9FF]/80 text-black font-bold text-lg rounded-2xl shadow-[0_0_20px_rgba(0,217,255,0.3)] transition-all hover:scale-105"
+                    className="h-14 px-10 bg-[#6366F1] hover:bg-[#6366F1]/80 text-black font-bold text-lg rounded-2xl shadow-[0_0_20px_rgba(99, 102, 241,0.3)] transition-all hover:scale-105"
                 >
                     {currentQIndex === questions.length - 1 ? "Finish Quiz" : "Next Question"}
                     <ArrowRight className="w-5 h-5 ml-2" />

@@ -2,7 +2,7 @@ import { Zap, Brain, MessageSquare, Layout, Target, Share2, Trophy, FileText, Gh
 
 const features = [
   {
-    icon: <Brain className="w-6 h-6 text-[#00D9FF]" />,
+    icon: <Brain className="w-6 h-6 text-[#6366F1]" />,
     title: "Neural Summaries",
     description: "Transform 100-page PDFs into instant, digestible concept maps using advanced AI processing."
   },
@@ -65,11 +65,11 @@ export function Features() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, i) => (
-            <div key={i} className="group p-8 rounded-3xl bg-[#12121A]/50 border border-white/5 hover:border-[#00D9FF]/30 transition-all duration-300 hover:-translate-y-2">
-              <div className="mb-6 bg-black/40 w-14 h-14 rounded-2xl flex items-center justify-center border border-white/5 group-hover:border-[#00D9FF]/20 transition-colors">
+            <div key={i} className="group p-8 rounded-3xl bg-[#12121A]/50 border border-white/5 hover:border-[#6366F1]/30 transition-all duration-300 hover:-translate-y-2">
+              <div className="mb-6 bg-black/40 w-14 h-14 rounded-2xl flex items-center justify-center border border-white/5 group-hover:border-[#6366F1]/20 transition-colors">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-bold mb-3 text-white group-hover:text-[#00D9FF] transition-colors">
+              <h3 className="text-xl font-bold mb-3 text-white group-hover:text-[#6366F1] transition-colors">
                 {feature.title}
               </h3>
               <p className="text-gray-500 leading-relaxed font-light">

@@ -24,9 +24,9 @@ export default function Settings() {
                 </CardHeader>
                 <CardContent className="space-y-6">
                     <div className="flex items-center gap-6">
-                        <Avatar className="w-20 h-20 border-2 border-[#00FFD1]/30">
+                        <Avatar className="w-20 h-20 border-2 border-[#818CF8]/30">
                             <AvatarImage src={user?.photoURL || ""} />
-                            <AvatarFallback className="bg-slate-800 text-[#00FFD1] text-2xl">
+                            <AvatarFallback className="bg-slate-800 text-[#818CF8] text-2xl">
                                 {user?.displayName?.charAt(0) || "U"}
                             </AvatarFallback>
                         </Avatar>
@@ -35,17 +35,17 @@ export default function Settings() {
 
                     <div className="grid gap-4 md:grid-cols-2">
                         <div className="space-y-2">
-                            <Label className="flex items-center gap-2"><User className="w-4 h-4 text-[#00FFD1]" /> Display Name</Label>
+                            <Label className="flex items-center gap-2"><User className="w-4 h-4 text-[#818CF8]" /> Display Name</Label>
                             <Input defaultValue={user?.displayName || ""} className="bg-black/20 border-white/10" />
                         </div>
                         <div className="space-y-2">
-                            <Label className="flex items-center gap-2"><Mail className="w-4 h-4 text-[#00FFD1]" /> Email</Label>
+                            <Label className="flex items-center gap-2"><Mail className="w-4 h-4 text-[#818CF8]" /> Email</Label>
                             <Input defaultValue={user?.email || ""} disabled className="bg-black/20 border-white/10 opacity-50" />
                         </div>
                     </div>
 
                     <div className="flex justify-end">
-                        <Button className="bg-[#00FFD1] text-black hover:bg-[#6FD2C0] font-bold">Save Changes</Button>
+                        <Button className="bg-[#818CF8] text-black hover:bg-[#6FD2C0] font-bold">Save Changes</Button>
                     </div>
                 </CardContent>
             </Card>
@@ -59,8 +59,8 @@ export default function Settings() {
                 <CardContent className="space-y-4">
                     <div className="flex items-center justify-between p-4 border border-white/10 rounded-lg bg-black/20">
                         <div className="flex items-center gap-4">
-                            <div className="p-2 bg-[#00FFD1]/10 rounded-lg">
-                                <Shield className="w-6 h-6 text-[#00FFD1]" />
+                            <div className="p-2 bg-[#818CF8]/10 rounded-lg">
+                                <Shield className="w-6 h-6 text-[#818CF8]" />
                             </div>
                             <div>
                                 <h4 className="font-semibold text-white">Password</h4>
@@ -72,8 +72,8 @@ export default function Settings() {
 
                     <div className="flex items-center justify-between p-4 border border-white/10 rounded-lg bg-black/20">
                         <div className="flex items-center gap-4">
-                            <div className="p-2 bg-[#00FFD1]/10 rounded-lg">
-                                <Smartphone className="w-6 h-6 text-[#00FFD1]" />
+                            <div className="p-2 bg-[#818CF8]/10 rounded-lg">
+                                <Smartphone className="w-6 h-6 text-[#818CF8]" />
                             </div>
                             <div>
                                 <h4 className="font-semibold text-white">Two-Factor Authentication</h4>

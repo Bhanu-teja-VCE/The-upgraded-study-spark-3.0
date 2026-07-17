@@ -108,11 +108,11 @@ export function Planner() {
     };
 
     const eventStyleGetter = (event: CalendarEvent) => {
-        let backgroundColor = "#00D9FF";
+        let backgroundColor = "#6366F1";
         let color = "#000";
 
         if (event.type === "generated") {
-            backgroundColor = "#00FFD1";
+            backgroundColor = "#818CF8";
         } else if (event.type === "review") {
             backgroundColor = "#8B5CF6";
             color = "#fff";
@@ -156,9 +156,9 @@ export function Planner() {
                                 <Plus className="w-5 h-5 mr-2" /> Add Event
                             </Button>
                         </DialogTrigger>
-                        <DialogContent className="bg-[#0A0A0F] border-[#00D9FF]/20 text-white sm:max-w-md">
+                        <DialogContent className="bg-[#0A0A0F] border-[#6366F1]/20 text-white sm:max-w-md">
                             <DialogHeader>
-                                <DialogTitle className="text-[#00D9FF]">Add New Event</DialogTitle>
+                                <DialogTitle className="text-[#6366F1]">Add New Event</DialogTitle>
                             </DialogHeader>
                             <div className="space-y-4 py-4">
                                 <div className="space-y-2">
@@ -167,7 +167,7 @@ export function Planner() {
                                         placeholder="e.g., Math Finals, Group Study..."
                                         value={newEventTitle}
                                         onChange={e => setNewEventTitle(e.target.value)}
-                                        className="bg-white/5 border-white/10 text-white h-12 rounded-xl focus:border-[#00D9FF]"
+                                        className="bg-white/5 border-white/10 text-white h-12 rounded-xl focus:border-[#6366F1]"
                                     />
                                 </div>
                                 <div className="grid grid-cols-2 gap-4">
@@ -196,7 +196,7 @@ export function Planner() {
                                         <SelectTrigger className="bg-white/5 border-white/10 text-white h-12 rounded-xl">
                                             <SelectValue />
                                         </SelectTrigger>
-                                        <SelectContent className="bg-[#0A0A0F] border-[#00D9FF]/20 text-white">
+                                        <SelectContent className="bg-[#0A0A0F] border-[#6366F1]/20 text-white">
                                             <SelectItem value="study">Study Session</SelectItem>
                                             <SelectItem value="review">Review</SelectItem>
                                             <SelectItem value="exam">Exam / Deadline</SelectItem>
@@ -206,7 +206,7 @@ export function Planner() {
                                 </div>
                                 <Button
                                     onClick={handleAddEvent}
-                                    className="w-full bg-[#00D9FF] hover:bg-[#00D9FF]/80 text-black font-bold h-12 rounded-xl shadow-[0_0_20px_rgba(0,217,255,0.3)] mt-4"
+                                    className="w-full bg-[#6366F1] hover:bg-[#6366F1]/80 text-black font-bold h-12 rounded-xl shadow-[0_0_20px_rgba(99, 102, 241,0.3)] mt-4"
                                 >
                                     Create Event
                                 </Button>
@@ -216,13 +216,13 @@ export function Planner() {
 
                     <Dialog open={isAiOpen} onOpenChange={setIsAiOpen}>
                         <DialogTrigger asChild>
-                            <Button className="bg-[#00D9FF] hover:bg-[#00D9FF]/80 text-black font-bold h-12 px-6 rounded-xl shadow-[0_0_20px_rgba(0,217,255,0.3)] transition-all hover:scale-[1.02]">
+                            <Button className="bg-[#6366F1] hover:bg-[#6366F1]/80 text-black font-bold h-12 px-6 rounded-xl shadow-[0_0_20px_rgba(99, 102, 241,0.3)] transition-all hover:scale-[1.02]">
                                 <Sparkles className="w-5 h-5 mr-2" /> AI Auto-Schedule
                             </Button>
                         </DialogTrigger>
-                        <DialogContent className="bg-[#0A0A0F] border-[#00D9FF]/20 text-white sm:max-w-md">
+                        <DialogContent className="bg-[#0A0A0F] border-[#6366F1]/20 text-white sm:max-w-md">
                             <DialogHeader>
-                                <DialogTitle className="text-[#00D9FF] flex items-center gap-2">
+                                <DialogTitle className="text-[#6366F1] flex items-center gap-2">
                                     <Sparkles className="w-5 h-5" /> AI Schedule Generator
                                 </DialogTitle>
                             </DialogHeader>
@@ -233,7 +233,7 @@ export function Planner() {
                                         type="date"
                                         value={deadline}
                                         onChange={e => setDeadline(e.target.value)}
-                                        className="bg-white/5 border-white/10 text-white h-12 rounded-xl focus:border-[#00D9FF]"
+                                        className="bg-white/5 border-white/10 text-white h-12 rounded-xl focus:border-[#6366F1]"
                                     />
                                 </div>
                                 <div className="space-y-2">
@@ -242,12 +242,12 @@ export function Planner() {
                                         placeholder="Calculus, History, Physics..."
                                         value={subjects}
                                         onChange={e => setSubjects(e.target.value)}
-                                        className="bg-white/5 border-white/10 text-white h-12 rounded-xl focus:border-[#00D9FF]"
+                                        className="bg-white/5 border-white/10 text-white h-12 rounded-xl focus:border-[#6366F1]"
                                     />
                                 </div>
                                 <Button
                                     onClick={handleGenerate}
-                                    className="w-full bg-[#00D9FF] hover:bg-[#00D9FF]/80 text-black font-bold h-12 rounded-xl shadow-[0_0_20px_rgba(0,217,255,0.3)] mt-4"
+                                    className="w-full bg-[#6366F1] hover:bg-[#6366F1]/80 text-black font-bold h-12 rounded-xl shadow-[0_0_20px_rgba(99, 102, 241,0.3)] mt-4"
                                     disabled={isGenerating}
                                 >
                                     {isGenerating ? <RefreshCw className="animate-spin w-5 h-5 mr-2" /> : <Sparkles className="w-5 h-5 mr-2" />}
@@ -259,16 +259,16 @@ export function Planner() {
 
                     {/* Task Detail Dialog */}
                     <Dialog open={!!selectedEvent} onOpenChange={() => setSelectedEvent(null)}>
-                        <DialogContent className="bg-[#0A0A0F] border-[#00D9FF]/20 text-white sm:max-w-md backdrop-blur-3xl">
+                        <DialogContent className="bg-[#0A0A0F] border-[#6366F1]/20 text-white sm:max-w-md backdrop-blur-3xl">
                             <DialogHeader>
-                                <DialogTitle className="text-2xl font-bold flex items-center gap-2 text-[#00D9FF]">
-                                    <div className="w-2 h-8 bg-[#00D9FF] rounded-full" />
+                                <DialogTitle className="text-2xl font-bold flex items-center gap-2 text-[#6366F1]">
+                                    <div className="w-2 h-8 bg-[#6366F1] rounded-full" />
                                     {selectedEvent?.title}
                                 </DialogTitle>
                             </DialogHeader>
                             <div className="space-y-6 py-4">
                                 <div className="flex items-center gap-3 text-slate-300">
-                                    <Clock className="w-5 h-5 text-[#00D9FF]" />
+                                    <Clock className="w-5 h-5 text-[#6366F1]" />
                                     <div>
                                         <p className="text-sm font-semibold">Time</p>
                                         <p className="text-sm">{selectedEvent && format(selectedEvent.start, "MMM dd, h:mm a")} - {selectedEvent && format(selectedEvent.end, "h:mm a")}</p>
@@ -283,7 +283,7 @@ export function Planner() {
                                             "inline-block px-2 py-0.5 rounded text-xs font-bold uppercase tracking-wider mt-1",
                                             selectedEvent?.type === 'exam' ? "bg-red-500/20 text-red-400" :
                                                 selectedEvent?.type === 'review' ? "bg-purple-500/20 text-purple-400" :
-                                                    "bg-[#00D9FF]/20 text-[#00D9FF]"
+                                                    "bg-[#6366F1]/20 text-[#6366F1]"
                                         )}>
                                             {selectedEvent?.type || "Task"}
                                         </span>
@@ -331,13 +331,13 @@ export function Planner() {
             {/* Custom Styles override for Calendar to match dark theme */}
             <style>{`
         .rbc-calendar { color: #94a3b8; font-family: inherit; }
-        .rbc-today { background-color: rgba(0, 217, 255, 0.05); }
+        .rbc-today { background-color: rgba(99, 102, 241, 0.05); }
         .rbc-off-range-bg { background-color: transparent; }
         .rbc-header { 
             border-bottom: 1px solid rgba(255,255,255,0.1); 
             padding: 16px; 
             font-weight: 700; 
-            color: #00D9FF; 
+            color: #6366F1; 
             text-transform: uppercase;
             letter-spacing: 0.1em;
             font-size: 0.8rem;
@@ -355,11 +355,11 @@ export function Planner() {
         }
         .rbc-toolbar button:hover { background-color: rgba(255,255,255,0.1); }
         .rbc-toolbar button.rbc-active { 
-            background-color: #00D9FF; 
-            border-color: #00D9FF; 
+            background-color: #6366F1; 
+            border-color: #6366F1; 
             color: #000;
             font-weight: bold;
-            box-shadow: 0 0 15px rgba(0,217,255,0.3);
+            box-shadow: 0 0 15px rgba(99, 102, 241,0.3);
         }
         .rbc-toolbar-label { font-size: 1.5rem; font-weight: 800; color: white; }
         .rbc-event { padding: 4px 8px; }

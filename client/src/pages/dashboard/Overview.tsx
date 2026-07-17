@@ -231,11 +231,11 @@ function ActionCard({ icon: Icon, title, desc, primary, href }: any) {
 function TaskItem({ title, time, tag, color }: any) {
     return (
         <div className="flex items-center gap-4 p-3 rounded-xl hover:bg-white/5 transition-colors cursor-pointer group">
-            <div className="w-5 h-5 rounded-full border-2 border-white/20 group-hover:border-[#00D9FF] transition-colors flex items-center justify-center">
-                <div className="w-2.5 h-2.5 rounded-full bg-[#00D9FF] opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="w-5 h-5 rounded-full border-2 border-white/20 group-hover:border-[#6366F1] transition-colors flex items-center justify-center">
+                <div className="w-2.5 h-2.5 rounded-full bg-[#6366F1] opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
             <div className="flex-1">
-                <h4 className="font-medium text-white group-hover:text-[#00D9FF] transition-colors">{title}</h4>
+                <h4 className="font-medium text-white group-hover:text-[#6366F1] transition-colors">{title}</h4>
                 <p className="text-xs text-gray-500">{time}</p>
             </div>
             <span className="flex items-center gap-1.5 text-xs font-medium bg-white/5 px-2.5 py-1 rounded-md border border-white/5">
@@ -249,11 +249,11 @@ function TaskItem({ title, time, tag, color }: any) {
 function ActivityItem({ icon: Icon, title, action, time, accent }: any) {
     return (
         <div className="flex items-center gap-4 group cursor-pointer">
-            <div className={cn("w-10 h-10 rounded-full flex items-center justify-center bg-white/5 border border-white/10 group-hover:border-[#00D9FF]/30 transition-colors", accent)}>
+            <div className={cn("w-10 h-10 rounded-full flex items-center justify-center bg-white/5 border border-white/10 group-hover:border-[#6366F1]/30 transition-colors", accent)}>
                 <Icon className="w-5 h-5" />
             </div>
             <div className="flex-1">
-                <p className="text-sm text-white font-medium group-hover:text-[#00D9FF] transition-colors">{title}</p>
+                <p className="text-sm text-white font-medium group-hover:text-[#6366F1] transition-colors">{title}</p>
                 <p className="text-xs text-gray-500">{action} • {time}</p>
             </div>
         </div>

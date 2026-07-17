@@ -19,12 +19,12 @@ function Landing() {
     }, []);
 
     return (
-        <div className="min-h-screen bg-[#0A0A0F] text-white selection:bg-[#00D9FF]/30 overflow-x-hidden font-inter relative">
+        <div className="min-h-screen bg-[#0A0A0F] text-white selection:bg-[#6366F1]/30 overflow-x-hidden font-inter relative">
             {/* 1. Interactive Cursor Spotlight */}
             <div
                 className="pointer-events-none fixed inset-0 z-0 transition-opacity duration-300"
                 style={{
-                    background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(0, 217, 255, 0.1), transparent 80%)`
+                    background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(99, 102, 241, 0.1), transparent 80%)`
                 }}
             />
 
@@ -46,7 +46,7 @@ function Landing() {
                 <footer className="py-12 border-t border-white/5 mt-20 bg-[#0A0A0F]/80 backdrop-blur-sm">
                     <div className="container mx-auto px-4 text-center">
                         <p className="text-gray-500 mb-2">© 2024 StudySpark.</p>
-                        <p className="text-xs text-[#00D9FF]/50">Built with Groq & Firebase</p>
+                        <p className="text-xs text-[#6366F1]/50">Built with Groq & Firebase</p>
                     </div>
                 </footer>
             </div>

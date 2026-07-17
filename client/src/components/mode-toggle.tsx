@@ -25,7 +25,7 @@ export function ModeToggle() {
                 <DropdownMenuItem onClick={() => setTheme("light")} className="focus:bg-[#0055FF]/20 focus:text-foreground cursor-pointer">
                     Light (Solar)
                 </DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setTheme("dark")} className="focus:bg-[#00D9FF]/20 focus:text-foreground cursor-pointer">
+                <DropdownMenuItem onClick={() => setTheme("dark")} className="focus:bg-[#6366F1]/20 focus:text-foreground cursor-pointer">
                     Dark (Cyber)
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => setTheme("system")} className="focus:bg-white/10 focus:text-foreground cursor-pointer">

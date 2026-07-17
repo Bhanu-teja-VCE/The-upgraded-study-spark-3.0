@@ -2,6 +2,8 @@
 
 ### *The AI-Powered Productivity Command Center for Academic Mastery*
 
+[![Live Demo](https://img.shields.io/badge/Live-Demo-6366F1?style=for-the-badge&logo=github)](https://Bhanu-teja-VCE.github.io/The-upgraded-study-spark-3.0/)
+
 **StudySpark** is a high-fidelity productivity web application designed to help students optimize focus, schedule deep study blocks, and leverage state-of-the-art AI to learn faster and retain more. By integrating active recall, spaced repetition, and brutal strategic AI coaching, StudySpark transforms passive studying into active mastery.
 
 ---

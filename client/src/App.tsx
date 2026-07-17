@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/queryClient";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -23,7 +23,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-        <Router basename={import.meta.env.BASE_URL}>
+        <Router>
           <Routes>
             {/* Public Routes */}
             <Route path="/" element={<Landing />} />
@@ -137,19 +137,19 @@ export function LoginPage() {
           </a>
         </div>
 
-        <a href="/dashboard" className="block">
+        <Link to="/dashboard" className="block">
           <button className="w-full py-4 bg-gradient-to-r from-[#6366F1] to-[#0099FF] text-black font-bold rounded-xl hover:shadow-[0_0_40px_rgba(99, 102, 241,0.3)] transform transition-all duration-300 active:scale-95 relative overflow-hidden group">
             <span className="relative z-10">Sign In</span>
             {/* Button internal shine */}
             <div className="absolute inset-0 h-full w-full scale-0 rounded-2xl transition-all duration-300 group-hover:scale-100 group-hover:bg-white/20"></div>
           </button>
-        </a>
+        </Link>
 
         <p className="text-center text-gray-500 text-sm mt-6">
           Don't have an account?{" "}
-          <a href="/register" className="text-[#6366F1] hover:text-[#6366F1]/80 font-medium transition-colors">
+          <Link to="/register" className="text-[#6366F1] hover:text-[#6366F1]/80 font-medium transition-colors">
             Sign up
-          </a>
+          </Link>
         </p>
       </div>
     </AuthLayout>
@@ -165,17 +165,17 @@ export function RegisterPage() {
         <InputField type="email" placeholder="Email Address" />
         <InputField type="password" placeholder="Password" />
 
-        <a href="/dashboard" className="block mt-2">
+        <Link to="/dashboard" className="block mt-2">
           <button className="w-full py-4 bg-gradient-to-r from-[#8B5CF6] to-[#6366F1] text-white font-bold rounded-xl hover:shadow-[0_0_40px_rgba(139,92,246,0.3)] transform transition-all duration-300 active:scale-95">
             Create Account
           </button>
-        </a>
+        </Link>
 
         <p className="text-center text-gray-500 text-sm mt-6">
           Already have an account?{" "}
-          <a href="/login" className="text-[#6366F1] hover:text-[#6366F1]/80 font-medium transition-colors">
+          <Link to="/login" className="text-[#6366F1] hover:text-[#6366F1]/80 font-medium transition-colors">
             Sign in
-          </a>
+          </Link>
         </p>
       </div>
     </AuthLayout>
